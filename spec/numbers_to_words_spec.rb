@@ -32,4 +32,28 @@ describe("Fixnum#numbers_to_words") do
   it("returns word for any seven digit number") do
     expect(7983401.numbers_to_words).to(eq("seven million nine hundred eighty three thousand four hundred one"))
   end
+  it("returns word for any eight digit number under 20 million") do
+    expect(14000000.numbers_to_words).to(eq("fourteen million"))
+  end
+  it("returns word for any eight digit number above 20 million") do
+    expect(21010101.numbers_to_words).to(eq("twenty one million ten thousand one hundred one"))
+  end
+  it("returns word for any nine digit number") do
+    expect(854028305.numbers_to_words).to(eq("eight hundred fifty four million twenty eight thousand three hundred five"))
+  end
+  it("returns word for any ten digit number") do
+    expect(7893400120.numbers_to_words).to(eq("seven billion eight hundred ninety three million four hundred thousand one hundred twenty"))
+  end
+  it("returns word for any 11 digit number under 20 billion") do
+    expect(14000000000.numbers_to_words).to(eq("fourteen billion"))
+  end
+  it("returns word for any 11 digit number above 20 billion") do
+    expect(35021010101.numbers_to_words).to(eq("thirty five billion twenty one million ten thousand one hundred one"))
+  end
+  it("returns word for any 12 digit number") do
+    expect(500000000000.numbers_to_words).to(eq("five hundred billion"))
+  end
+  it("returns word for any 13 digit number") do
+    expect(9090909090909.numbers_to_words).to(eq("nine trillion ninety billion nine hundred nine million ninety thousand nine hundred nine"))
+  end
 end
