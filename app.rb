@@ -3,7 +3,7 @@ require("sinatra/reloader")
 require("./lib/numbers_to_words.rb")
 also_reload('lib/**/*.rb')
 
-get ("/form") do
+get ("/") do
   erb(:form)
 end
 
